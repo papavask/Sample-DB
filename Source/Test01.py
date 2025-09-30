@@ -1,6 +1,8 @@
 import streamlit as st
-from streamlit_chromadb_connection.chromadb_connection import ChromadbConnection
+from streamlit.connections import ExperimentalBaseConnection
+import chromadb
 
+# Initialize ChromaDB client
 chroma_client = chromadb.Client()
 
 # switch `create_collection` to `get_or_create_collection` to avoid creating a new collection every time
@@ -20,4 +22,4 @@ results = collection.query(
     n_results=2 # how many results to return
 )
 
-print(results)
+st.write(results)
