@@ -1,4 +1,6 @@
-import chromadb
+import streamlit as st
+from streamlit_chromadb_connection.chromadb_connection import ChromadbConnection
+
 chroma_client = chromadb.Client()
 
 # switch `create_collection` to `get_or_create_collection` to avoid creating a new collection every time
